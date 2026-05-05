@@ -53,7 +53,7 @@ Workflow
 
 Models Used
 
-* Logistic Regression ✅ (Best Model)
+* Logistic Regression (Best Model)
 * Naive Bayes
 * Passive Aggressive Classifier
 * Random Forest
