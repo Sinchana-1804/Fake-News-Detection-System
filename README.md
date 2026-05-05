@@ -1,129 +1,104 @@
 Fake News Detection System
+Overview
 
-Project Overview
-
-This project focuses on building a **Machine Learning model** to classify news articles as **Fake or Real** using Natural Language Processing (NLP) techniques.
-
-The system processes textual data, extracts meaningful features, and applies multiple classification algorithms to achieve high accuracy.
-
----
-
-Objectives
-
-* Detect fake news using machine learning
-* Apply NLP techniques for text preprocessing
-* Compare multiple ML models
-* Visualize insights using graphs and charts
-
----
+This project focuses on building a machine learning model to classify news articles as fake or real using Natural Language Processing (NLP) techniques. The complete pipeline includes data preprocessing, exploratory data analysis (EDA), feature extraction, model training, evaluation, and prediction.
 
 Dataset
 
-* File: `fake_news_dataset.csv`
-* Contains news articles labeled as:
+The project uses a labeled dataset of news articles containing textual content and corresponding labels:
 
-  * **0 → Fake News**
-  * **1 → Real News**
+text: News article content
+label:
+0 → Fake News
+1 → Real News
 
----
+The dataset is preprocessed to remove noise and prepare text for modeling.
 
-Technologies Used
+Project Stages
+1. Data Loading, Preprocessing & EDA
+Loaded dataset from CSV file
+Checked for missing values and duplicates
+Cleaned text data (removal of punctuation, stopwords, etc.)
+Performed basic text preprocessing and normalization
 
-* Python
-* Pandas, NumPy
-* Scikit-learn
-* NLTK
-* Matplotlib & Seaborn
-* WordCloud
-* XGBoost
+Exploratory Data Analysis (EDA) included:
 
----
+Distribution of fake vs real news
+Text length analysis
+Word frequency analysis
+WordCloud visualization for fake and real news
+N-gram (bi-gram/trigram) analysis
+Statistical insights of text data
+2. Feature Engineering, Model Training & Evaluation
+Feature Engineering
+Converted text data into numerical features using TF-IDF Vectorization
+Normalized feature representation
+Model Training
 
-Workflow
+Trained multiple classification models:
 
-1. Data Loading
-2. Data Cleaning & Preprocessing
-3. Text Tokenization & Stopword Removal
-4. Feature Extraction (TF-IDF)
-5. Model Training
-6. Model Evaluation
-7. Visualization
+Logistic Regression
+Naive Bayes
+Passive Aggressive Classifier
+Random Forest
+Gradient Boosting
+Support Vector Machine
+XGBoost
+Evaluation
+Models evaluated using:
+Accuracy
+Precision
+Recall
+F1-score
+Cross-validation
 
----
+Best Performing Model: Logistic Regression achieved the highest performance among all models.
 
-Models Used
+3. Model Evaluation Plots
 
-* Logistic Regression (Best Model)
-* Naive Bayes
-* Passive Aggressive Classifier
-* Random Forest
-* Gradient Boosting
-* XGBoost
-* Support Vector Machine
+Generated multiple visualizations for performance comparison:
 
----
+Confusion Matrix for best model
+Model comparison bar chart (accuracy and cross-validation scores)
+ROC curves for all models
+Precision-Recall curve
+Feature importance visualization
+TF-IDF feature analysis
+Model performance radar chart
+Prediction confidence distribution
+4. Key Features
 
-Best Model
+Important textual features contributing to classification include:
 
-* Logistic Regression
+High-frequency words in fake vs real news
+N-gram patterns
+TF-IDF weighted keywords
 
----
+These features help differentiate linguistic patterns between fake and real news.
 
-Results & Visualizations
-
-Class Distribution
-
-![Distribution](fig1_distribution.png)
-
-WordCloud
-
-![WordCloud](fig3_wordclouds.png)
-
-Model Comparison
-
-![Model Comparison](fig7_model_comparison.png)
-
-Confusion Matrix
-
-![Confusion Matrix](fig9_confusion_matrices.png)
-
-ROC Curve
-
-![ROC](fig10_roc_curves.png)
-
----
-
+5. Prediction System
+Prediction on Sample Data
+Model tested on sample news articles
+Outputs include:
+Predicted label (Fake/Real)
+Confidence score
+Probability distribution
+Prediction on New Input
+Users can input custom news text
+System predicts whether the news is fake or real
+Provides confidence level of prediction
 Saved Files
+best_model_lr.pkl → Trained Logistic Regression model
+tfidf_vectorizer.pkl → TF-IDF feature transformer
+Conclusion
 
-* `best_model_lr.pkl` → Trained model
-
-
----
-
-How to Run
-
-1. Clone the repository
-2. Install dependencies:
-
-```bash
-pip install pandas numpy matplotlib seaborn scikit-learn nltk wordcloud xgboost
-```
-
-3. Run the notebook:
-
-```bash
-jupyter notebook
-```
-
----
+The project successfully demonstrates the application of NLP and machine learning techniques to detect fake news. Logistic Regression performed best among the tested models, providing reliable classification results. The system can be extended into real-world applications such as news verification platforms.
 
 Future Improvements
-
-* Deploy as a web application
-* Use Deep Learning (LSTM, BERT)
-* Improve dataset size and quality
-
----
+Deployment as a web application
+Integration with real-time news APIs
+Use of deep learning models (LSTM, BERT)
+Larger and more diverse dataset
 
 Author
 
@@ -131,4 +106,4 @@ Author
 * Vibha Shanbhag
 * Chinmay Shanbhag
 
----
+
